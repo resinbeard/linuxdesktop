@@ -1,0 +1,46 @@
+    URxvt.perl-ext-common: tabbed, matcher
+    URxvt.termName: rxvt-unicode
+
+    ## borderless and no scrollbar
+    URxvt*scrollBar_right: true
+    URxvt*scrollBar: true
+    URxvt*borderLess: false
+
+	URxvt*scrollstyle: plain
+
+    ## tab bar colors
+    URxvt.tabbed.tabbar-fg:     12
+	URxvt.tabbed.tabbar-bg: 16
+	URxvt.tabbed.tab-fg:    1
+	URxvt.tabbed.tab-bg:    16
+	URxvt.tabbed.title-fg:  1
+
+	URxvt.tabbed.title-bg:  16
+
+    ## teh transparency stuff
+   urxvt*depth: 32
+   urxvt*background: [85]#000000
+    ## geometry and font
+    URxvt*geometry: 800×600
+    URxvt*font: xft:Terminus:style=Regular:pixelsize=12
+
+    URxvt*background:               #e1d6c4
+    URxvt*foreground:               #e1d6c4
+
+    ## change default colors
+    URxvt*color0: #ffffff
+    URxvt*color1: #ffffff
+    URxvt*color2: #ffffff
+    URxvt*color3: #e4d4c4
+    URxvt*color4: #dfd6c7
+    URxvt*color5: #c7b9b0
+    URxvt*color6: #a07564
+    URxvt*color7: #b1845a
+    URxvt*color8: #bfb8ae
+    URxvt*color9: #b1a192
+    URxvt*color10: #ded0b5
+    URxvt*color11: #b1a192
+    URxvt*color12: #ada39a
+    URxvt*color13: #75451f
+    URxvt*color14: #be9e89
+    URxvt*color15: #abbddc
