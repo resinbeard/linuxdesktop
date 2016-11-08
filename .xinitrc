@@ -12,6 +12,9 @@ hsetroot -solid "#ffffff" -fill Pictures/20160924/8.jpg &
 synclient TapButton3=3 &
 xrandr --newmode "2560x1440_33.00"  162.75  2560 2696 2960 3360  1440 1443 1448 1470
 xrandr --addmode HDMI1 2560x1440_33.00 
+
+sudo /etc/init.d/wpa_supplicant restart
+
 cpu(){
     echo `top -bn1 | grep "Cpu(s)" |            sed "s/.*, *\([0-9.]*\)%* id.*/\1/" |            awk '{print 100 - $1"%"}'`
     }
