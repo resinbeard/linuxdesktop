@@ -1,7 +1,10 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "-*-*-medium-*-*-*-14-*-*-*-*-*-*-*";
+static const char *fonts[] = {
+       "Terminus:size=8"
+};
+static const char dmenufont[]            = "Terminus:size=8";
 static const char normbordercolor[] = "#a5ac79";
 static const char normbgcolor[]     = "#333333";
 static const char normfgcolor[]     = "#9c9c9c";
@@ -12,7 +15,6 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = False;     /* False means bottom bar */
-static Bool resizehints = False;
 
 /* tagging */
 static const char *tags[] = { "+", "-", "*", "/", "%", "&", "()" };
@@ -31,15 +33,15 @@ static const Rule rules[] = {
 
 /* layout(s) */
 static const float mfact      = 0.55; /* factor of master area size [0.05..0.95] */
+static const int nmaster      = 1;    /* number of clients in master area */
+static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
 static const Layout layouts[] = { /* first entry is default */
 	/* symbol     arrange function */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[]=",      tile },    
+	{ "[]=",      NULL },    /* no layout function means floating behavior */
+	{ "><>",      tile },    
 	{ "[M]",      monocle },
 };
-
-static const int nmaster      = 1;    /* number of clients in master area */
 
 /* key definitions */
 
@@ -47,7 +49,8 @@ static const int nmaster      = 1;    /* number of clients in master area */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static char dmenumon[2] = "0"; /* component of demnucmd, mannipulated in spawn() */
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "urxvt" };
 //static const char *termcmd[]  = { "urxvt", "-depth", 32, "-bg", "rgba:3f00/3f00/3f00/dddd" };
 

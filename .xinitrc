@@ -7,13 +7,11 @@ eval "$(gpg-agent --daemon)"
 urxvtd -q -f -o &
 amixer -q set Headphone mute &
 compton &
-hsetroot -solid "#ffffff" -center Pictures/redwoods3.jpg &
-#dbus-send --system --type=method_call --print-reply=literal --dest=org.bluez /org/bluez/hci0 org.freedesktop.DBus.Properties.Set string:org.bluez.Adapter1 string:Powered variant:boolean:true &
-hcitool scan &
-sudo hciconfig hci0 up &
+hsetroot -solid "#ffffff" -fill Pictures/20160924/8.jpg &
 #bluez-test-audio connect 0C:A6:94:B2:F6:F8 &
-synclient TapButton3=3
-
+synclient TapButton3=3 &
+xrandr --newmode "2560x1440_33.00"  162.75  2560 2696 2960 3360  1440 1443 1448 1470
+xrandr --addmode HDMI1 2560x1440_33.00 
 cpu(){
     echo `top -bn1 | grep "Cpu(s)" |            sed "s/.*, *\([0-9.]*\)%* id.*/\1/" |            awk '{print 100 - $1"%"}'`
     }
